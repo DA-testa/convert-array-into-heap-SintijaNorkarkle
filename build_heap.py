@@ -44,12 +44,25 @@ def main():
     if "I" in text:
         n = int(input("Input the size: "))
         data = list(map(int, input("Input the heap: ").split()))
-    elif "F" in text:
-        faila_nosaukums = input("Input filename: ")
-        
-        with open ("./test/" + faila_nosaukums, mode = "r", encoding = "utf8") as file:
-            n = int(file.readline())
-            data = list(map(int, file.readline().split()))
+   elif "F" in text:
+    # nolasa faila nosaukumu
+        faila_nosaukums = input()
+    # pārbauda vai faila nosaukums satur "a"
+        if "a" in faila_nosaukums:
+            print("Nederīgs faila nosaukums!")
+
+        try:
+    # atver failu un nolasa vērtības
+            faila_nosaukums = "test/" + faila_nosaukums
+            with open(faila_nosaukums, 'r' ,  encoding="utf8") as file:
+                n = int(file.readline())
+                data = list(map(int, file.readline().split()))
+
+        except FileNotFoundError:
+    # ja fails neeskistē, izvada paziņojumu
+            print("Fails netika atrasts!")
+            return
+           
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
