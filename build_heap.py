@@ -23,7 +23,6 @@ def SiftDown(data, swaps, i):
         data[i], data[indekss] = data[indekss], data[i]
         SiftDown(data, swaps, indekss)
 
-
 def build_heap(data):
     swaps = [] 
 
