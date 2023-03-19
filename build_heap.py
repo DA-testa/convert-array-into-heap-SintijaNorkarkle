@@ -47,7 +47,7 @@ def main():
     elif "F" in text:
         faila_nosaukums = input("Input filename: ")
         
-        with open ("/test" + faila_nosaukums, mode = 'r', encoding = "utf8") as file:
+        with open ("./test/" + faila_nosaukums, mode = "r", encoding = "utf8") as file:
             n = int(file.readline())
             data = list(map(int, file.readline().split()))
 
