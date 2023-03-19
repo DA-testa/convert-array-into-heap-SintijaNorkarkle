@@ -8,6 +8,9 @@ def SiftDown(data, swaps, i):
     mc = child < n and data[child] < data[indekss]
     indekss += mc * (child - indekss)
     child += mc
+    mc = child < n and data[child] < data[indekss]
+    indekss += mc * (child - indekss)
+    child += mc
     if indekss != i:
         swaps.append((i, indekss))
         data[i], data[indekss] = data[indekss], data[i]
