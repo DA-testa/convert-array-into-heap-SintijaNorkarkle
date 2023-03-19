@@ -56,15 +56,15 @@ def main():
         #   print("Nederīgs faila nosaukums!")
 
     # atver failu un nolasa vērtības
-            cels = "./tests/"
-            with open(cels + faila_nosaukums, 'r') as file:
-                n = int(file.readline())
-                data = list(map(int, file.readline().split()))
+        cels = "./tests/"
+        with open(cels + faila_nosaukums, 'r') as file:
+            n = int(file.readline())
+            data = list(map(int, file.readline().split()))
 
-            else :
+        else :
     # ja fails neeskistē, izvada paziņojumu
-                print("Fails netika atrasts!")
-                return
+            print("Fails netika atrasts!")
+            return
            
 
     
