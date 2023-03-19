@@ -6,13 +6,10 @@ Sintija Norkārkle, RDCPO, 1. grupa
 # python3
 
 def SiftDown(data, swaps, i):
-    # tiek iziets cauri visiem elementiem un maina tos vietām
 
-    # iegūst masīva garumu
     n = len(data)
     indekss = i
     
-    # pārbauda leftchild un, vai ir datu robežās
     leftchild = 2 * i + 1
     mc = leftchild < n and data[leftchild] < data[indekss]
     indekss += mc * (leftchild - indekss)
@@ -34,7 +31,6 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
 
-    # veido koku un sakārto vēlamajā secībā
     n = len(data)
     i = n // 2 - 1
     while i >= 0:
@@ -63,7 +59,6 @@ def main():
     # nolasa faila nosaukumu
         print("Input filename: ")
         faila_nosaukums = input()
-    # pārbauda vai faila nosaukums satur "a"
         # if "a" in faila_nosaukums:
         #   print("Nederīgs faila nosaukums!")
 
