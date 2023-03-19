@@ -44,7 +44,7 @@ def main():
     if "I" in text:
         n = int(input("Input the size: "))
         data = list(map(int, input("Input the heap: ").split()))
-   elif "F" in text:
+    elif "F" in text:
     # nolasa faila nosaukumu
         faila_nosaukums = input()
     # pārbauda vai faila nosaukums satur "a"
