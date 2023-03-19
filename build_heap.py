@@ -1,3 +1,8 @@
+
+"""
+Sintija Norkārkle, RDCPO, 1. grupa
+"""
+
 # python3
 
 def SiftDown(data, swaps, i):
