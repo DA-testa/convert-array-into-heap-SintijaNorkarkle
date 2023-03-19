@@ -61,14 +61,6 @@ def main():
             n = int(file.readline())
             data = list(map(int, file.readline().split()))
 
-        else: print("Fails netika atrasts!")
-    # ja fails neeskistē, izvada paziņojumu
-            
-            return
-           
-
-    
-
     # calls function to assess the data 
     # and give back all swaps
     swaps = build_heap(data)
