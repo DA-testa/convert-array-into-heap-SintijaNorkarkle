@@ -49,15 +49,14 @@ def main():
 
     elif "F" in text:
     # nolasa faila nosaukumu
-        print("Input filename: ")
-        faila_nosaukums = input()
+        faila_nosaukums = input("Input filename: ")
     # pārbauda vai faila nosaukums satur "a"
         # if "a" in faila_nosaukums:
         #   print("Nederīgs faila nosaukums!")
 
     # atver failu un nolasa vērtības
-        cels = "./tests/"
-        with open(cels + faila_nosaukums, 'r') as file:
+        faila_nosaukums = "test/" + faila_nosaukums
+        with open(faila_nosaukums, 'r', encoding="utf8") as file:
             n = int(file.readline())
             data = list(map(int, file.readline().split()))
 
