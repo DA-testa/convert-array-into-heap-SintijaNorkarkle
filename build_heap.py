@@ -46,7 +46,9 @@ def main():
         data = list(map(int, input("Input the heap: ").split()))
     elif "F" in text:
         faila_nosaukums = input("Input filename: ").strip()
-        faila_nosaukums = "test/" + faila_nosaukums
+        if "a" in faila_nosaukums:
+            print("Nederīgs faila nosaukums!")
+        faila_nosaukums = "./test/" + faila_nosaukums
         with open (faila_nosaukums, 'r', encoding = "utf8") as file:
             n = int(file.readline())
             data = list(map(int, file.readline().split()))
