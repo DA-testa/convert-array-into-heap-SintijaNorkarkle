@@ -4,13 +4,15 @@ def SiftDown(data, swaps, i):
     # 
     n = len(data)
     indekss = i
-    child = 2 * i + 1
-    mc = child < n and data[child] < data[indekss]
-    indekss += mc * (child - indekss)
-    child += mc
-    mc = child < n and data[child] < data[indekss]
-    indekss += mc * (child - indekss)
-    child += mc
+    leftchild = 2 * i + 1
+    mc = leftchild < n and data[leftchild] < data[indekss]
+    indekss += mc * (leftchild - indekss)
+    leftchild += mc
+    
+    rightchild = 2 * i + 2
+    mc = rightchild < n and data[rightchild] < data[indekss]
+    indekss += mc * (rightchild - indekss)
+    rightchild += mc
     if indekss != i:
         swaps.append((i, indekss))
         data[i], data[indekss] = data[indekss], data[i]
@@ -37,7 +39,7 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
     
-    text = input("Ievadiet 'I' vai 'F': ")
+    text = input("Input 'I' or 'F': ")
     
     # input from keyboard
     
