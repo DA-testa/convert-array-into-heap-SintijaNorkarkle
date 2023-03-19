@@ -1,9 +1,13 @@
 # python3
 
 def SiftDown(data, swaps, i):
-    # 
+    # tiek iziets cauri visiem elementiem un maina tos vietām
+
+    # iegūst masīva garumu
     n = len(data)
     indekss = i
+    
+    # pārbauda leftchild un, vai ir datu robežās
     leftchild = 2 * i + 1
     mc = leftchild < n and data[leftchild] < data[indekss]
     indekss += mc * (leftchild - indekss)
@@ -13,6 +17,7 @@ def SiftDown(data, swaps, i):
     mc = rightchild < n and data[rightchild] < data[indekss]
     indekss += mc * (rightchild - indekss)
     rightchild += mc
+
     if indekss != i:
         swaps.append((i, indekss))
         data[i], data[indekss] = data[indekss], data[i]
@@ -25,6 +30,7 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
 
+    # veido koku un sakārto vēlamajā secībā
     n = len(data)
     i = n // 2 - 1
     while i >= 0:
@@ -42,10 +48,10 @@ def main():
     text = input("Input 'I' or 'F': ")
     
     # input from keyboard
-    
     if "I" in text:
         n = int(input("Input the size: "))
         data = list(map(int, input("Input the heap: ").split()))
+        
         # checks if lenght of data is the same as the said lenght
         assert len(data) == n
 
