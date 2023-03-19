@@ -44,28 +44,30 @@ def main():
     if "I" in text:
         n = int(input("Input the size: "))
         data = list(map(int, input("Input the heap: ").split()))
+        # checks if lenght of data is the same as the said lenght
+        assert len(data) == n
+
     elif "F" in text:
     # nolasa faila nosaukumu
+        print("Input filename: ")
         faila_nosaukums = input()
     # pārbauda vai faila nosaukums satur "a"
-        if "a" in faila_nosaukums:
-            print("Nederīgs faila nosaukums!")
+        # if "a" in faila_nosaukums:
+        #   print("Nederīgs faila nosaukums!")
 
-        try:
     # atver failu un nolasa vērtības
-            faila_nosaukums = "test/" + faila_nosaukums
-            with open(faila_nosaukums, 'r' ,  encoding="utf8") as file:
+            cels = "./tests/"
+            with open(cels + faila_nosaukums, 'r') as file:
                 n = int(file.readline())
                 data = list(map(int, file.readline().split()))
 
-        except FileNotFoundError:
+            else :
     # ja fails neeskistē, izvada paziņojumu
-            print("Fails netika atrasts!")
-            return
+                print("Fails netika atrasts!")
+                return
            
 
-    # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
+    
 
     # calls function to assess the data 
     # and give back all swaps
