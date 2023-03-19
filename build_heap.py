@@ -61,9 +61,9 @@ def main():
             n = int(file.readline())
             data = list(map(int, file.readline().split()))
 
-        else :
+        else: print("Fails netika atrasts!")
     # ja fails neeskistē, izvada paziņojumu
-            print("Fails netika atrasts!")
+            
             return
            
 
